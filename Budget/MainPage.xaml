@@ -7,7 +7,7 @@
             <ShellContent Title="Франция">
                 <ContentPage Title="Франция">
                     <StackLayout>
-                        <Label Text="Париж" />
+                        <Label Text="ЯЛОм" />
                     </StackLayout>
                 </ContentPage>
             </ShellContent>
