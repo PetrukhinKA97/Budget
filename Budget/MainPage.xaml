@@ -1,23 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Budget.Views"
              x:Class="Budget.MainPage">
-    <FlyoutItem Title="Европа">
-        <Tab Title="Западная">
-            <ShellContent Title="Франция">
-                <ContentPage Title="Франция">
+    <Shell.FlyoutHeader>
+        <StackLayout  Padding="10">
+            <Label Text="рар" />
+        </StackLayout>
+    </Shell.FlyoutHeader>
+    
+    <FlyoutItem Title="Планирование" >
+        <Tab Title="Планирование">
+            <ShellContent Title="День" ContentTemplate="{DataTemplate local:planning}">
+                <ContentPage >
                     <StackLayout>
                         <Label Text="Проверка передачи надругой комп" />
                     </StackLayout>
                 </ContentPage>
             </ShellContent>
-            <ShellContent Title="Великобритания">
-                <ContentPage Title="Великобитания">
+            <ShellContent Title="Неделя">
+                <ContentPage>
                     <StackLayout>
                         <Label Text="Лондон" />
                     </StackLayout>
                 </ContentPage>
             </ShellContent>
+            <ShellContent Title="Месяц">
+                    <ContentPage>
+                        <StackLayout>
+                            <Label Text="Лондон" />
+                        </StackLayout>
+                    </ContentPage>
+            </ShellContent>
+            <ShellContent Title="Год">
+                        <ContentPage>
+                            <StackLayout>
+                                <Label Text="Лондон" />
+                            </StackLayout>
+                        </ContentPage>
+             </ShellContent>
         </Tab>
         <Tab Title="Центральная">
             <ShellContent Title="Германия">
@@ -37,7 +58,7 @@
         </Tab>
     </FlyoutItem>
 
-    <FlyoutItem Title="Азия">
+    <FlyoutItem Title="Задачи">
         <Tab Title="Ближний Восток">
             <ShellContent Title="Турция">
                 <ContentPage Title="Турция">
@@ -71,4 +92,30 @@
             </ShellContent>
         </Tab>
     </FlyoutItem>
+
+    <FlyoutItem Title="Траты">
+        <Tab Title="Западная">
+            <ShellContent Title="Франция">
+                <ContentPage Title="Франция">
+                    <StackLayout>
+                        <Label Text="Проверка передачи надругой комп" />
+                    </StackLayout>
+                </ContentPage>
+            </ShellContent>
+            <ShellContent Title="Великобритания">
+                <ContentPage Title="Великобитания">
+                    <StackLayout>
+                        <Label Text="Лондон" />
+                    </StackLayout>
+                </ContentPage>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    
+    <ShellContent Title="Настройки" ContentTemplate="{DataTemplate local:settings}">
+    </ShellContent>
+
+    <Shell.FlyoutFooter>
+        <Label Text="Хорошего дня" HorizontalOptions="Center" />
+    </Shell.FlyoutFooter>
 </Shell>
