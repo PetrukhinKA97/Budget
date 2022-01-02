@@ -15,30 +15,12 @@
                 <ContentPage >
                     <StackLayout>
                         <Label Text="Проверка передачи надругой комп" />
+                        <!--//
+                            Написать модуль для формирование динамической страницы от выбранного дествия пользователя
+                        //--> 
                     </StackLayout>
                 </ContentPage>
             </ShellContent>
-            <ShellContent Title="Неделя">
-                <ContentPage>
-                    <StackLayout>
-                        <Label Text="Лондон" />
-                    </StackLayout>
-                </ContentPage>
-            </ShellContent>
-            <ShellContent Title="Месяц">
-                    <ContentPage>
-                        <StackLayout>
-                            <Label Text="Лондон" />
-                        </StackLayout>
-                    </ContentPage>
-            </ShellContent>
-            <ShellContent Title="Год">
-                        <ContentPage>
-                            <StackLayout>
-                                <Label Text="Лондон" />
-                            </StackLayout>
-                        </ContentPage>
-             </ShellContent>
         </Tab>
         <Tab Title="Центральная">
             <ShellContent Title="Германия">
