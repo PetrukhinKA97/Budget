@@ -18,102 +18,47 @@
                     </StackLayout>
                 </ContentPage>
             </ShellContent>
-            <ShellContent Title="Неделя">
-                <ContentPage>
-                    <StackLayout>
-                        <Label Text="Лондон" />
-                    </StackLayout>
-                </ContentPage>
-            </ShellContent>
-            <ShellContent Title="Месяц">
-                    <ContentPage>
-                        <StackLayout>
-                            <Label Text="Лондон" />
-                        </StackLayout>
-                    </ContentPage>
-            </ShellContent>
-            <ShellContent Title="Год">
-                        <ContentPage>
-                            <StackLayout>
-                                <Label Text="Лондон" />
-                            </StackLayout>
-                        </ContentPage>
-             </ShellContent>
-        </Tab>
-        <Tab Title="Центральная">
-            <ShellContent Title="Германия">
-                <ContentPage Title="Германия">
-                    <StackLayout>
-                        <Label Text="Берлин" />
-                    </StackLayout>
-                </ContentPage>
-            </ShellContent>
-            <ShellContent Title="Австрия">
-                <ContentPage Title="Австрия">
-                    <StackLayout>
-                        <Label Text="Вена" />
-                    </StackLayout>
-                </ContentPage>
-            </ShellContent>
+            <!-- //
+            Автоматическое создание страницы
+            //-->
         </Tab>
     </FlyoutItem>
 
-    <FlyoutItem Title="Задачи">
+    <FlyoutItem Title="Задачи" >
         <Tab Title="Ближний Восток">
-            <ShellContent Title="Турция">
+            <ShellContent Title="Турция" ContentTemplate="{DataTemplate local:tasks}">
                 <ContentPage Title="Турция">
                     <StackLayout>
                         <Label Text="Анкара" />
                     </StackLayout>
                 </ContentPage>
             </ShellContent>
-            <ShellContent Title="Иран">
-                <ContentPage Title="Иран">
-                    <StackLayout>
-                        <Label Text="Тегеран" />
-                    </StackLayout>
-                </ContentPage>
-            </ShellContent>
-        </Tab>
-        <Tab Title="Восточная Азия">
-            <ShellContent Title="Китай">
-                <ContentPage Title="Китай">
-                    <StackLayout>
-                        <Label Text="Пекин" />
-                    </StackLayout>
-                </ContentPage>
-            </ShellContent>
-            <ShellContent Title="Япония">
-                <ContentPage Title="Япония">
-                    <StackLayout>
-                        <Label Text="Токио" />
-                    </StackLayout>
-                </ContentPage>
-            </ShellContent>
         </Tab>
     </FlyoutItem>
+    <!-- //
+            Автоматическое создание страницы
+    //-->
 
-    <FlyoutItem Title="Траты">
+    <FlyoutItem Title="Траты" >
         <Tab Title="Западная">
-            <ShellContent Title="Франция">
+            <ShellContent Title="Франция" ContentTemplate="{DataTemplate local:expenses}">
                 <ContentPage Title="Франция">
                     <StackLayout>
                         <Label Text="Проверка передачи надругой комп" />
                     </StackLayout>
                 </ContentPage>
             </ShellContent>
-            <ShellContent Title="Великобритания">
-                <ContentPage Title="Великобитания">
-                    <StackLayout>
-                        <Label Text="Лондон" />
-                    </StackLayout>
-                </ContentPage>
-            </ShellContent>
         </Tab>
     </FlyoutItem>
+    <!--//
+    Автоматическое создание страницы
+    //-->
     
     <ShellContent Title="Настройки" ContentTemplate="{DataTemplate local:settings}">
     </ShellContent>
+    <!-- //
+            Автоматическое создание страницы
+    //-->
 
     <Shell.FlyoutFooter>
         <Label Text="Хорошего дня" HorizontalOptions="Center" />
