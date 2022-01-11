@@ -7,4 +7,6 @@ namespace Budget_databes
         SQLite.SQLiteConnection DbConnection();
 
     }
+
+    public class 
 }

@@ -17,16 +17,31 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\expenses.xaml">
+    <Compile Update="Views\Display\VTasks.xaml.cs">
+      <DependentUpon>VTasks.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Display\VSettings.xaml.cs">
+      <DependentUpon>VSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Display\VPlanning.xaml.cs">
+      <DependentUpon>VPlanning.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Display\VExpenses.xaml.cs">
+      <DependentUpon>VExpenses.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Display\VExpenses.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\planning.xaml">
+    <EmbeddedResource Update="Views\Display\VPlanning.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\settings.xaml">
+    <EmbeddedResource Update="Views\Display\VSettings.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\tasks.xaml">
+    <EmbeddedResource Update="Views\Display\VTasks.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
