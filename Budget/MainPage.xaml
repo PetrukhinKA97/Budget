@@ -40,13 +40,8 @@
     //-->
 
     <FlyoutItem Title="Траты" >
-        <Tab Title="Западная">
-            <ShellContent Title="Франция" ContentTemplate="{DataTemplate local:expenses}">
-                <ContentPage Title="Франция">
-                    <StackLayout>
-                        <Label Text="Проверка передачи надругой комп" />
-                    </StackLayout>
-                </ContentPage>
+        <Tab >
+            <ShellContent ContentTemplate="{DataTemplate local:expenses}">
             </ShellContent>
         </Tab>
     </FlyoutItem>

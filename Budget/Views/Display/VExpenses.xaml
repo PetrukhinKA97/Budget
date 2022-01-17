@@ -3,10 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Budget.Views.expenses">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Траты"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="5" >
+            <Picker  TitleColor="Red" SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Расходы</x:String>
+                    <x:String>Доходы</x:String>
+                </Picker.Items>
+            </Picker>
+            <StackLayout >
+                <Label Text="Название"/>
+                <Entry x:Name="Name"/>
+            </StackLayout>
+            <StackLayout IsEnabled="False">
+                <Label x:Name="Type" />
+                <Entry x:Name="Spending"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
