@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Budget.Views.VExpenses_chan_del">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Удалить"/>
+            <Entry />
+            <Button Text="Удалить" Clicked="Delete"/>
+            <Label Text="Редактировать"/>
+            <Entry />
+            <Button Text="Редактировать" Clicked="Change"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

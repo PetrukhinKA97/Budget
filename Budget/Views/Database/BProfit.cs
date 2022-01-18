@@ -5,15 +5,15 @@ using SQLite;
 
 namespace Budget.Views.Database
 {
-    [Table("Task")]
-    class СTask
+    [Table("Profit")]
+    class BProfit
     {
-        //Задачи
+        //Прибыль
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Importance { get; set; }
-        public DateTime Date_min { get; set; }
-        public DateTime Date_max { get; set; }
+        public int Type_profit { get; set; }
+        public DateTime Data { get; set; }
+        public double Amount { get; set; }
     }
 }

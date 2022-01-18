@@ -5,16 +5,13 @@ using SQLite;
 
 namespace Budget.Views.Database
 {
-    [Table("Spending")]
-    class CSpending
+    [Table("Type_expenses")]
+    class BType_expenses
     {
-        //Расход
+        //Тип расхода
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Type_of_Spending { get; set; }
-        public int Importance { get; set; }
-        public DateTime Data { get; set; }
-        public double Amount { get; set; }
+       
     }
 }

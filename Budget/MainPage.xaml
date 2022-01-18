@@ -3,59 +3,79 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Budget.Views"
              x:Class="Budget.MainPage">
-    <Shell.FlyoutHeader>
-        <StackLayout  Padding="10">
-            <Label Text="рар" />
-        </StackLayout>
-    </Shell.FlyoutHeader>
-    
+    <FlyoutItem Title="Сводка" >
+        <Tab>
+            <ShellContent>
+                <ContentPage Title="Сводка">
+                    <StackLayout>
+                        <Label Text="В скором будущем"/>
+                    </StackLayout>
+                </ContentPage>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
     <FlyoutItem Title="Планирование" >
-        <Tab Title="Планирование">
-            <ShellContent Title="День" ContentTemplate="{DataTemplate local:planning}">
-                <ContentPage >
+        <Tab>
+            <ShellContent>
+                <ContentPage Title="Планирование">
                     <StackLayout>
-                        <Label Text="Проверка передачи надругой комп" />
-                        <!--//
-                            Написать модуль для формирование динамической страницы от выбранного дествия пользователя
-                        //-->
+                        <Label Text="В скором будущем"/>
                     </StackLayout>
                 </ContentPage>
             </ShellContent>
         </Tab>
     </FlyoutItem>
-
     <FlyoutItem Title="Задачи" >
-        <Tab Title="Ближний Восток">
-            <ShellContent Title="Турция" ContentTemplate="{DataTemplate local:tasks}">
-                <ContentPage Title="Турция">
+        <Tab>
+            <ShellContent>
+                <ContentPage Title="Задачи">
                     <StackLayout>
-                        <Label Text="Анкара" />
+                        <Label Text="В скором будущем"/>
                     </StackLayout>
                 </ContentPage>
             </ShellContent>
         </Tab>
     </FlyoutItem>
-    <!-- //
-            Автоматическое создание страницы
-    //-->
-
-    <FlyoutItem Title="Траты" >
-        <Tab >
-            <ShellContent ContentTemplate="{DataTemplate local:expenses}">
+    <FlyoutItem Title="Геолокация" >
+        <Tab>
+            <ShellContent>
+                <ContentPage Title="Геолокация">
+                    <StackLayout>
+                        <Label Text="В скором будущем"/>
+                    </StackLayout>
+                </ContentPage>
             </ShellContent>
         </Tab>
     </FlyoutItem>
-    <!--//
-    Автоматическое создание страницы
-    //-->
-    
-    <ShellContent Title="Настройки" ContentTemplate="{DataTemplate local:settings}">
+    <FlyoutItem Title="Бюджет">
+        <Tab Title="Расходы">
+            <ShellContent Title="Добавить" ContentTemplate="{DataTemplate local:VExpenses_add}">
+            </ShellContent>
+            <ShellContent Title="Редактировать/Удалить" ContentTemplate="{DataTemplate local:VExpenses_chan_del}">
+            </ShellContent>
+            <ShellContent Title="Тип кретичности/трат" ContentTemplate="{DataTemplate local:VExpenses_type}">
+            </ShellContent>
+        </Tab>
+        <Tab Title="Доходы">
+            <ShellContent Title="Добавить" ContentTemplate="{DataTemplate local:VProfit_add}">
+            </ShellContent>
+            <ShellContent Title="Редактировать/Удалить" ContentTemplate="{DataTemplate local:VProfit_chan_del}">
+            </ShellContent>
+            <ShellContent Title="Тип дохода" ContentTemplate="{DataTemplate local:VProfit_type}">
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Гардероб" >
+        <Tab>
+            <ShellContent>
+                <ContentPage Title="Гардероб">
+                    <StackLayout>
+                        <Label Text="В скором будущем"/>
+                    </StackLayout>
+                </ContentPage>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <ShellContent Title="Настройки" ContentTemplate="{DataTemplate local:VExpenses_add}">
     </ShellContent>
-    <!-- //
-            Автоматическое создание страницы
-    //-->
-
-    <Shell.FlyoutFooter>
-        <Label Text="Хорошего дня" HorizontalOptions="Center" />
-    </Shell.FlyoutFooter>
 </Shell>

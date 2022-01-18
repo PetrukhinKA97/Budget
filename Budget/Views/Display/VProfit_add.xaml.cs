@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
-namespace Budget
+namespace Budget.Views
 {
-    public partial class MainPage : Shell
-    { 
-        public MainPage()
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class VProfit_add : ContentPage
+    {
+
+        public VProfit_add()
         {
             InitializeComponent();
         }
+       
     }
 }

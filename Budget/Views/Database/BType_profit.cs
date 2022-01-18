@@ -5,8 +5,8 @@ using SQLite;
 
 namespace Budget.Views.Database
 {
-    [Table("Type_of_profit")]
-    class СType_of_profit
+    [Table("Type_profit")]
+    class BType_profit
     {
         //Тип дохода
         [PrimaryKey, AutoIncrement, Column("_id")]
