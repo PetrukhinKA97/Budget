@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using SQLite;
+using System.ComponentModel;
 
 namespace Budget.Views.Database
 {
     [Table("Expenses")]
-    class BExpenses
+    public class BExpenses : INotifyPropertyChanged
     {
         //Расход
         [PrimaryKey, AutoIncrement, Column("_id")]
@@ -18,6 +19,13 @@ namespace Budget.Views.Database
         public double Amount { get; set; }
         public int Number { get; set; }
         public double Volume { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(string propertyName)
+        {
+            this.PropertyChanged?.Invoke(this,
+              new PropertyChangedEventArgs(propertyName));
+        }
     }
 
 }
