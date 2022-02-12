@@ -8,7 +8,7 @@ using Xamarin.Forms;
 using Windows.Storage;
 using System.IO;
 using Budget.UWP.Views;
-using Budget_databes;
+using Budget.Views.Service;
 
 [assembly: Dependency(typeof(DatabaseConnection_UWP))]
 

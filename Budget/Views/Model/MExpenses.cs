@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using SQLite;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Collections;
 
-namespace Budget.Views.Database
+namespace Budget.Views.Model
 {
-    [Table("Expenses")]
-    public class BExpenses : INotifyPropertyChanged
+    [Table("MExpenses")]
+    public class MExpenses : IEnumerable
     {
         //Расход
         [PrimaryKey, AutoIncrement, Column("_id")]
@@ -20,11 +22,9 @@ namespace Budget.Views.Database
         public int Number { get; set; }
         public double Volume { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string propertyName)
+        public IEnumerator GetEnumerator()
         {
-            this.PropertyChanged?.Invoke(this,
-              new PropertyChangedEventArgs(propertyName));
+            return this.GetEnumerator();
         }
     }
 

@@ -17,28 +17,28 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Display\VProfit_type.xaml.cs">
+    <Compile Update="Views\View\VProfit_type.xaml.cs">
       <DependentUpon>VProfit_type.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Display\VProfit_chan_del.xaml.cs">
+    <Compile Update="Views\View\VProfit_chan_del.xaml.cs">
       <DependentUpon>VProfit_chan_del.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Display\VProfit_add.xaml.cs">
+    <Compile Update="Views\View\VProfit_add.xaml.cs">
       <DependentUpon>VProfit_add.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Display\VExpenses_type.xaml.cs">
+    <Compile Update="Views\View\VExpenses_type.xaml.cs">
       <DependentUpon>VExpenses_type.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Display\VExpenses_chan_del.xaml.cs">
+    <Compile Update="Views\View\VExpenses_chan_del.xaml.cs">
       <DependentUpon>VExpenses_chan_del.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Display\VExpenses_add.xaml.cs">
+    <Compile Update="Views\View\VExpenses_add.xaml.cs">
       <DependentUpon>VExpenses_add.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\Display\VExpenses_add.xaml">
+    <EmbeddedResource Update="Views\View\VExpenses_add.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

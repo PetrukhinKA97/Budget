@@ -1,26 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Budget.Views.Model" x:DataType="local:MExpenses"
              x:Class="Budget.Views.VExpenses_add">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Название"/>
-            <Entry x:Name="Name_expenses"/>
-            <Label Text="Тип трат"/>
-            <Picker x:Name="Type_expenses"/>
-            <Button Text="Добавить" x:Name="Type_expenses_add"/>
-            <Label Text="Кретичность"/>
-            <Picker x:Name="Importance" />
-            <Button Text="Добавить" x:Name="Type_importance_add"/>
+            <Entry Text="{Binding Name}"/>
             <Label Text="Дата"/>
-            <Entry x:Name="Date"/>
+            <DatePicker Date="{Binding Data}"/>
             <Label Text="Сумма"/>
-            <Entry x:Name="Amount"/>
+            <Entry Text="{Binding Amount}"/>
             <Label Text="Количество"/>
-            <Entry x:Name="Number"/>
+            <Entry Text="{Binding Number}"/>
             <Label Text="Обьем"/>
-            <Entry x:Name="Volume"/>
-            <Button Text="Добавить траты" x:Name="Importance_add" Clicked="Importance_add_Clicked"/>
+            <Entry Text="{Binding Volume}"/>
+            <Label Text="Тип трат"/>
+            <Picker BindingContext="{Binding Type_expenses}"/>
+            <Label Text="Кретичность"/>
+            <Picker BindingContext="{Binding Importance}" />
+            <Button Text="Добавить траты" Clicked="Importance_add_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
