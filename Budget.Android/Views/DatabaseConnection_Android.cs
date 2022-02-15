@@ -1,7 +1,7 @@
 ﻿using SQLite;
 using System.IO;
 using Budget.Droid.Views;
-using Budget.Views.Service;
+using Service;
 
 [assembly: Xamarin.Forms.Dependency(typeof(DatabaseConnection_Android))]
 

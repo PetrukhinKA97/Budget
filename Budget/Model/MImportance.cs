@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SQLite;
+﻿using SQLite;
 
-namespace Budget.Views.Model
+namespace Model
 {
     [Table("Importance")]
     class MImportance

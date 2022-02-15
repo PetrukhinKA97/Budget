@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SQLite;
+﻿using SQLite;
 using Xamarin.Forms;
 using Windows.Storage;
 using System.IO;
 using Budget.UWP.Views;
-using Budget.Views.Service;
+using Service;
 
 [assembly: Dependency(typeof(DatabaseConnection_UWP))]
 

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Budget.Views"
+             xmlns:local="clr-namespace:View.Budget"
              x:Class="Budget.MainPage">
     <FlyoutItem Title="Сводка" >
         <Tab>
@@ -47,19 +47,17 @@
             </ShellContent>
         </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="Бюджет">
+    <FlyoutItem Title="Бюджет.Расходы">
         <Tab Title="Расходы">
-            <ShellContent Title="Добавить" ContentTemplate="{DataTemplate local:VExpenses_add}">
-            </ShellContent>
-            <ShellContent Title="Редактировать/Удалить" ContentTemplate="{DataTemplate local:VExpenses_chan_del}">
+            <ShellContent Title="Траты за месяц" ContentTemplate="{DataTemplate local:VExpenses}">
             </ShellContent>
             <ShellContent Title="Тип кретичности/трат" ContentTemplate="{DataTemplate local:VExpenses_type}">
             </ShellContent>
         </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Бюджет.Доходы">
         <Tab Title="Доходы">
-            <ShellContent Title="Добавить" ContentTemplate="{DataTemplate local:VProfit_add}">
-            </ShellContent>
-            <ShellContent Title="Редактировать/Удалить" ContentTemplate="{DataTemplate local:VProfit_chan_del}">
+            <ShellContent Title="Прибыль за месяц" ContentTemplate="{DataTemplate local:VProfit_add}">
             </ShellContent>
             <ShellContent Title="Тип дохода" ContentTemplate="{DataTemplate local:VProfit_type}">
             </ShellContent>
@@ -76,6 +74,6 @@
             </ShellContent>
         </Tab>
     </FlyoutItem>
-    <ShellContent Title="Настройки" ContentTemplate="{DataTemplate local:VExpenses_add}">
+    <ShellContent Title="Настройки" >
     </ShellContent>
 </Shell>

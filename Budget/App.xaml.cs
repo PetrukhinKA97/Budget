@@ -1,9 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Budget.Views.Service;
 using System.IO;
-using Budget.Views.ViewModel;
+using ViewModel;
 
 namespace Budget
 {

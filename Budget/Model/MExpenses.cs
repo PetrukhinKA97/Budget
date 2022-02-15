@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using SQLite;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Collections;
 
-namespace Budget.Views.Model
+namespace Model
 {
     [Table("MExpenses")]
     public class MExpenses : IEnumerable

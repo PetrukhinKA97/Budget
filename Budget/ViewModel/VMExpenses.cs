@@ -1,21 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
-using System.Threading.Tasks;
-using Budget.Views.Model;
-using Budget.Views.Service;
+using Model;
 using SQLite;
-using Xamarin.Forms;
 
-namespace Budget.Views.ViewModel
+namespace ViewModel
 {
     public class VMExpenses : INotifyPropertyChanged
     {
         private SQLiteConnection database;
         public event PropertyChangedEventHandler PropertyChanged;
         private MExpenses VM_Expenses;
-        private List <MExpenses> VM_List_Expenses;
+        private List<MExpenses> List_;
+
+        public List<MExpenses> List_Expenses
+        {
+            get
+            { return database.Table<MExpenses>().ToList(); }
+            set { List_ = value; }
+        }
 
         public VMExpenses()
         {
@@ -41,6 +43,16 @@ namespace Budget.Views.ViewModel
         public List<MExpenses> Update()
         {
             return database.Table<MExpenses>().ToList();
+        }
+
+        public void Delete(object i)
+        {
+            database.Delete(i);
+        }
+        public void Update(object i)
+        {
+
+            database.Update(i);
         }
     }
 }

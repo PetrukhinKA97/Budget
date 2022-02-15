@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Budget.Views
+namespace View.Budget
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VExpenses_type : ContentPage

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Budget.Views.VExpenses_type">
+             x:Class="View.Budget.VProfit_type">
     <ContentPage.Content>
         <StackLayout Padding="5" >
             <Label Text="Название"/>

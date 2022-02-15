@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Model"
+             x:Class="View.Budget.VExpenses">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid RowDefinitions="25">
+                <Label Grid.Column="0" Text="Название"/>
+                <Label Grid.Column="1" Text="Дата"/>
+                <Label Grid.Column="2" Text="Цена"/>
+            </Grid>
+            <ListView x:Name="ExpensesV" IsPullToRefreshEnabled="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="Delete"    CommandParameter="{Binding .}" Text="Удалить" />
+                                <MenuItem Clicked="Change"    CommandParameter="{Binding .}" Text="Редактировать"/>
+                            </ViewCell.ContextActions>
+                            <Grid>
+                                <Label Grid.Column="0" Text="{Binding Name}" />
+                                <Label Grid.Column="1" Text="{Binding Data}"/>
+                                <Label Grid.Column="2" Text="{Binding Amount}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Добавить траты" Clicked="Button_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

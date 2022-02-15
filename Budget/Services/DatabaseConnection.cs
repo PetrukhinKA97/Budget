@@ -1,6 +1,4 @@
-﻿using SQLite;
-
-namespace Budget.Views.Service
+﻿namespace Service
 {
     public interface IDatabaseConnection
     {

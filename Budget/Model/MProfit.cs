@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using SQLite;
 
-namespace Budget.Views.Model
+namespace Model
 {
     [Table("Profit")]
     class MProfit
