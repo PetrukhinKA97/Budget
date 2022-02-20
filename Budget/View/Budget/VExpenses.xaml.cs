@@ -2,6 +2,10 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Budget;
+using ViewModel;
+using System.Collections.ObjectModel;
+using Model;
+using System.Collections.Generic;
 
 namespace View.Budget
 {
@@ -12,15 +16,25 @@ namespace View.Budget
         public VExpenses()
         {
             InitializeComponent();
-            ExpensesV.ItemsSource = App.Database.Update();
+            BindingView();
+            
         }
 
-        private void Delete(object sender, EventArgs e)
+        private async void Delete(object sender, EventArgs e)
         {
             if (sender.GetType() == typeof(Xamarin.Forms.MenuItem))
             {
-                App.database.Delete(((Xamarin.Forms.MenuItem)sender).BindingContext);
+                var ff = (Model.MExpenses)((Xamarin.Forms.MenuItem)sender).BindingContext;
+                await App.Database.DeleteItemAsync(ff);
+                App.Database.ListMS.Remove(ff);
             }
+        }
+
+        private  async void BindingView()
+        {
+            await App.Database.GetItems();
+            ExpensesV.ItemsSource =  App.Database.ListMS;
+            ExpensesV.BindingContext = App.Database.ListMS;
         }
 
         private void Change(object sender, EventArgs e)

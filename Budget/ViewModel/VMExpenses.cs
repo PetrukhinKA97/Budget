@@ -1,58 +1,55 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using Model;
 using SQLite;
+using Xamarin.Forms;
 
 namespace ViewModel
 {
-    public class VMExpenses : INotifyPropertyChanged
+    public class VMExpenses 
     {
-        private SQLiteConnection database;
-        public event PropertyChangedEventHandler PropertyChanged;
-        private MExpenses VM_Expenses;
-        private List<MExpenses> List_;
-
-        public List<MExpenses> List_Expenses
+        private SQLiteAsyncConnection database;
+        private ObservableCollection<MExpenses> list_expenses;
+        public ObservableCollection<MExpenses> ListMS
         {
-            get
-            { return database.Table<MExpenses>().ToList(); }
-            set { List_ = value; }
+            get { return list_expenses; }
+            set { list_expenses = value; }
         }
-
-        public VMExpenses()
-        {
-            VM_Expenses = new MExpenses();
-        }
-
         public VMExpenses(string databasePath)
         {
-            database = new SQLiteConnection(databasePath);
-            database.CreateTable<MExpenses>();
-        }
-        public void SaveItem(MExpenses V_Expenses)
-        {
-            database.Insert(V_Expenses); 
-        }
+            database = new SQLiteAsyncConnection(databasePath);
 
-        protected void OnPropertyChanged(string propName)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
-
-        public List<MExpenses> Update()
+        public async Task GetItems()
         {
-            return database.Table<MExpenses>().ToList();
+            var id= await database.Table<MExpenses>().ToListAsync();
+            list_expenses = new ObservableCollection<MExpenses>(id);
         }
-
-        public void Delete(object i)
+        public async Task<List<MExpenses>> GetItemsAsync()
         {
-            database.Delete(i);
+            return await database.Table<MExpenses>().ToListAsync().ConfigureAwait(false);
         }
-        public void Update(object i)
+        public async Task<MExpenses> GetItemAsync(int id)
         {
-
-            database.Update(i);
+            return await database.GetAsync<MExpenses>(id);
+        }
+        public async Task<int> DeleteItemAsync(MExpenses item)
+        {
+            return await database.DeleteAsync(item);
+        }
+        public async Task<int> SaveItemAsync(MExpenses item)
+        {
+            if (item.Id != 0)
+            {
+                await database.UpdateAsync(item);
+                return item.Id;
+            }
+            else
+            {
+                return await database.InsertAsync(item);
+            }
         }
     }
 }

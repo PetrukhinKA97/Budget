@@ -20,9 +20,8 @@ namespace View.Budget
         private async void Importance_add_Clicked(object sender, EventArgs e)
         {
             MExpenses wow = (MExpenses)this.BindingContext;
-            App.Database.SaveItem(wow);
+            await App.Database.SaveItemAsync(wow);
             await Navigation.PopAsync();
-            App.Database.Update();
         }
     }
 }

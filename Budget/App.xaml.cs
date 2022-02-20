@@ -8,7 +8,7 @@ namespace Budget
     public partial class App : Application
     {
         public const string DATABASE_NAME = "Budget.db";
-        public static VMExpenses database;
+        private static VMExpenses database;
         public static VMExpenses Database
         {
             get
@@ -20,6 +20,7 @@ namespace Budget
                 return database;
             }
         }   
+
         public App()
         {
             InitializeComponent();
