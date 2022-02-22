@@ -31,23 +31,22 @@ namespace ViewModel
         {
             return await database.Table<MExpenses>().ToListAsync().ConfigureAwait(false);
         }
-        public async Task<MExpenses> GetItemAsync(int id)
-        {
-            return await database.GetAsync<MExpenses>(id);
-        }
         public async Task<int> DeleteItemAsync(MExpenses item)
         {
             return await database.DeleteAsync(item);
         }
         public async Task<int> SaveItemAsync(MExpenses item)
         {
-            if (item.Id != 0)
+            if (item.Id != 0 )
             {
                 await database.UpdateAsync(item);
+                var f=ListMS.IndexOf(item);
+                ListMS[f]=item;
                 return item.Id;
             }
             else
             {
+                ListMS.Add(item);
                 return await database.InsertAsync(item);
             }
         }

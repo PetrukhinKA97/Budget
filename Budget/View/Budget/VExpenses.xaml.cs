@@ -37,10 +37,11 @@ namespace View.Budget
             ExpensesV.BindingContext = App.Database.ListMS;
         }
 
-        private void Change(object sender, EventArgs e)
+        private async void Change(object sender, EventArgs e)
         {
             //Открытие формы VExpenses_add_chan с выбранными данными
-
+            MExpenses ff = (MExpenses)((MenuItem)sender).BindingContext;
+            await Navigation.PushAsync(new VExpenses_add_chan(ff));
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
