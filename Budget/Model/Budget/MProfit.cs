@@ -1,7 +1,7 @@
 ﻿using System;
 using SQLite;
 
-namespace Model
+namespace Model.Budget
 {
     [Table("Profit")]
     class MProfit

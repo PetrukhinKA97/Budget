@@ -1,12 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Threading.Tasks;
-using Model;
+﻿using Model.Budget;
 using SQLite;
-using Xamarin.Forms;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
-namespace ViewModel
+namespace ViewModel.Budget
 {
     public class VMExpenses 
     {
@@ -40,8 +38,8 @@ namespace ViewModel
             if (item.Id != 0 )
             {
                 await database.UpdateAsync(item);
-                var f=ListMS.IndexOf(item);
-                ListMS[f]=item;
+                //var f=ListMS.IndexOf(item);
+               // ListMS[f]=item;
                 return item.Id;
             }
             else

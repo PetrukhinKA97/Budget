@@ -1,13 +1,14 @@
 ﻿using SQLite;
 
-namespace Model
+namespace Model.Budget
 {
-    [Table("Importance")]
-    class MImportance
+    [Table("Type_expenses")]
+    class MType_expenses
     {
-        //Важность
+        //Тип расхода
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }
         public string Name { get; set; }
+       
     }
 }

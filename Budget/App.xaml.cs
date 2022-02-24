@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using System.IO;
-using ViewModel;
+using ViewModel.Budget;
 
 namespace Budget
 {

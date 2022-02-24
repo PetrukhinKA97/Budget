@@ -1,6 +1,6 @@
 ﻿using SQLite;
 
-namespace Model
+namespace Model.Budget
 {
     [Table("Type_profit")]
     class MType_profit

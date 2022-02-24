@@ -1,11 +1,8 @@
-﻿using System;
+﻿using Budget;
+using Model.Budget;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Budget;
-using ViewModel;
-using System.Collections.ObjectModel;
-using Model;
-using System.Collections.Generic;
 
 namespace View.Budget
 {
@@ -22,9 +19,9 @@ namespace View.Budget
 
         private async void Delete(object sender, EventArgs e)
         {
-            if (sender.GetType() == typeof(Xamarin.Forms.MenuItem))
+            if (sender.GetType() == typeof(MenuItem))
             {
-                var ff = (Model.MExpenses)((Xamarin.Forms.MenuItem)sender).BindingContext;
+                var ff = (MExpenses)((MenuItem)sender).BindingContext;
                 await App.Database.DeleteItemAsync(ff);
                 App.Database.ListMS.Remove(ff);
             }
@@ -34,7 +31,9 @@ namespace View.Budget
         {
             await App.Database.GetItems();
             ExpensesV.ItemsSource =  App.Database.ListMS;
-            ExpensesV.BindingContext = App.Database.ListMS;
+            /*Binding binding = App.Database.ListMS;
+            ExpensesV.SetBinding();
+            ExpensesV.BindingContext = App.Database.ListMS;*/
         }
 
         private async void Change(object sender, EventArgs e)

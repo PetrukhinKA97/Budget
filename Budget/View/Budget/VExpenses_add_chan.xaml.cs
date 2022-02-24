@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Budget;
-using Model;
+using Model.Budget;
 
 namespace View.Budget
 {

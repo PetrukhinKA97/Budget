@@ -2,10 +2,10 @@
 using SQLite;
 using System.Collections;
 
-namespace Model
+namespace Model.Budget
 {
     [Table("MExpenses")]
-    public class MExpenses : IEnumerable
+    public class MExpenses 
     {
         //Расход
         [PrimaryKey, AutoIncrement, Column("_id")]
@@ -17,11 +17,6 @@ namespace Model
         public double Amount { get; set; }
         public int Number { get; set; }
         public double Volume { get; set; }
-
-        public IEnumerator GetEnumerator()
-        {
-            return this.GetEnumerator();
-        }
     }
 
 }
