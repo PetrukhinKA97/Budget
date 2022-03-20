@@ -8,6 +8,7 @@ namespace ViewModel.Budget
 {
     public class VMExpenses 
     {
+
         private SQLiteAsyncConnection database;
         private ObservableCollection<MExpenses> list_expenses;
         public ObservableCollection<MExpenses> ListMS
